@@ -1,0 +1,426 @@
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #7A1128;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* ============================= */
+/*      PORTFOLIO CUSTOM CSS     */
+/*      Theme: Maroon + WhiteSmoke */
+/* ============================= */
+
+:root {
+  --maroon: #7A1128;
+  --maroon-dark: #58091C;
+  --maroon-light: #A33249;
+  --whitesmoke: #F5F5F5;
+  --gold-accent: #C9A24B;
+
+  /* Retheme Bootstrap's primary color across all bg/text/btn/border-primary utilities */
+  --bs-primary: #7A1128;
+  --bs-primary-rgb: 122, 17, 40;
+  --bs-primary-text-emphasis: #58091C;
+  --bs-primary-bg-subtle: #F3DCE1;
+  --bs-primary-border-subtle: #C98A98;
+  --bs-link-color: #7A1128;
+  --bs-link-color-rgb: 122, 17, 40;
+  --bs-link-hover-color: #58091C;
+  --bs-link-hover-color-rgb: 88, 9, 28;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--whitesmoke);
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    color: #2B2B2B;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 0 12px rgba(0,0,0,.15);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+}
+
+.logo-circle {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    border: 2px solid var(--gold-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--gold-accent);
+}
+
+.sidebar .logo {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,.85);
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: .25s;
+}
+
+.sidebar .nav-link i {
+    font-size: 1.05rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link:focus {
+    background: rgba(255,255,255,.12);
+    color: var(--gold-accent) !important;
+    transform: translateX(3px);
+}
+
+.sidebar .copyright {
+    color: rgba(255,255,255,.55);
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 16px;
+}
+
+/* ---------- Main content ---------- */
+.content {
+    padding: 0 40px;
+}
+
+@media (max-width: 767px) {
+    .content {
+        padding: 0 16px;
+    }
+    .sidebar {
+        position: static;
+        min-height: auto;
+        height: auto;
+    }
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+    padding: 100px 0 80px;
+}
+
+.hero-image {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 15px 35px rgba(122,17,40,.25);
+    transition: .4s;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Sections ---------- */
+section {
+    padding: 70px 0;
+    scroll-margin-top: 20px;
+}
+
+section h2 {
+    color: var(--maroon-dark);
+    position: relative;
+    padding-bottom: 12px;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    height: 4px;
+    background: var(--gold-accent);
+    border-radius: 2px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--maroon);
+    border-color: var(--maroon);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--maroon-dark);
+    border-color: var(--maroon-dark);
+}
+
+.btn-outline-primary {
+    color: var(--maroon);
+    border-color: var(--maroon);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--maroon);
+    border-color: var(--maroon);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--maroon-dark);
+    border-color: var(--maroon-dark);
+}
+
+.btn-dark {
+    background-color: #2B2B2B;
+    border-color: #2B2B2B;
+}
+
+.btn-success {
+    background-color: var(--maroon);
+    border-color: var(--maroon);
+}
+
+.btn-success:hover {
+    background-color: var(--maroon-dark);
+    border-color: var(--maroon-dark);
+}
+
+.badge {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.badge.bg-primary {
+    background-color: var(--maroon) !important;
+}
+
+.badge.bg-secondary {
+    background-color: #6B6B6B !important;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    border-radius: 14px;
+    transition: .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(122,17,40,.12) !important;
+}
+
+.card.bg-light {
+    background-color: #FBF7F8 !important;
+}
+
+.card .text-primary {
+    color: var(--maroon) !important;
+}
+
+/* ---------- Stats row (About section accent) ---------- */
+.stat-box {
+    text-align: center;
+    padding: 18px 10px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+.stat-box .stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--maroon);
+}
+
+.stat-box .stat-label {
+    font-size: .85rem;
+    color: #6B6B6B;
+}
+
+/* ---------- Text link colors ---------- */
+.text-primary {
+    color: var(--maroon) !important;
+}
+
+a {
+    color: var(--maroon);
+}
+
+a:hover {
+    color: var(--maroon-dark);
+}
+/* ---------- Sidebar account area ---------- */
+.sidebar-divider {
+    border-color: rgba(255,255,255,.2);
+    margin: 24px 0 18px;
+}
+
+.signed-in-as {
+    color: rgba(255,255,255,.8);
+    font-size: .85rem;
+    margin-bottom: 10px;
+}
+
+.signed-in-as strong {
+    color: var(--gold-accent);
+}
+
+.btn-sidebar {
+    background: rgba(255,255,255,.12);
+    border: 1px solid var(--gold-accent);
+    color: var(--gold-accent);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: .85rem;
+}
+
+.btn-sidebar:hover,
+.btn-sidebar:focus {
+    background: var(--gold-accent);
+    color: var(--maroon-dark);
+}
+
+/* ---------- Table of contents ---------- */
+.toc-card {
+    background: #fff;
+}
+
+.toc-list {
+    padding-left: 20px;
+}
+
+.toc-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.toc-list li:last-child {
+    border-bottom: none;
+}
+
+.toc-list a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.toc-list a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Project thumbnails ---------- */
+.thumb-link {
+    display: block;
+    background: #ECE7E8;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+}
+
+.project-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+}
+
+.detail-thumb {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    background: #ECE7E8;
+}
+
+/* Shown when a screenshot file is missing and the fallback icon is used */
+.thumb-placeholder {
+    object-fit: contain;
+    padding: 40px;
+    background: #ECE7E8;
+    opacity: .5;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb a {
+    text-decoration: none;
+}
+
+/* ---------- Comments ---------- */
+.comment-form {
+    max-width: 620px;
+}
+
+.comment-item {
+    border-top: 1px solid #ECECEC;
+    padding: 14px 0;
+}
+
+.comment-text {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ---------- Login page ---------- */
+.login-wrapper {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 16px;
+}
+
+.login-logo {
+    background: var(--maroon);
+    color: var(--gold-accent);
+}

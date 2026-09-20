@@ -1,0 +1,208 @@
+@model IReadOnlyList<Project>
+@{
+    ViewData["Title"] = "My Portfolio";
+    var categories = Model.Select(p => p.Category).Distinct().ToList();
+}
+
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left Side -->
+            <div class="col-lg-6">
+
+                <span class="badge bg-primary mb-2 px-3 py-2">
+                    👋 Welcome to my Portfolio
+                </span>
+
+                <h5 class="text-primary fw-bold mb-1 mt-3">
+                    HELLO, I'M
+                </h5>
+
+                <h1 class="display-4 fw-bold mt-1 mb-2">
+                    Mariane Valerie Añes
+                </h1>
+
+                <h3 class="text-secondary mb-3">
+                    Information Technology Student
+                </h3>
+
+                <p class="lead text-muted">
+                    I am passionate about software development, web technologies,
+                    and creating user-friendly applications. I continuously
+                    improve my programming skills through academic projects and
+                    hands-on learning.
+                </p>
+
+                <a href="#contents" class="btn btn-primary mt-3">
+                    <i class="bi bi-list-ol me-2"></i>Browse my projects
+                </a>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+                <img src="~/images/media.jpg"
+                     class="hero-image"
+                     alt="Mariane Valerie Añes">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-5 my-4 border-bottom">
+    <h2 class="mb-4 fw-bold">About Me</h2>
+    <div class="row">
+        <div class="col-12">
+            <p class="fs-6 lh-lg">
+                I am an Information Technology student at Lyceum of Alabang with a passion for software development, web technologies, and continuous learning. I enjoy building applications that are functional, user-friendly, and designed to solve real-world problems.
+            </p>
+            <p class="fs-6 lh-lg">
+                Throughout my academic journey, I have gained experience in programming, database management, and web development through various projects. I am committed to improving my technical skills, embracing new technologies, and growing into a competent software developer who can contribute to the ever-evolving IT industry.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-5 my-4 border-bottom">
+    <h2 class="mb-4 fw-bold">Skills</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-primary"><i class="bi bi-code-square me-2"></i>Languages</h5>
+                    <p class="card-text">Java, C++, C#, Python, VBA</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-primary"><i class="bi bi-globe2 me-2"></i>Web Tech</h5>
+                    <p class="card-text">HTML, CSS, Bootstrap, ASP.NET Core MVC</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-primary"><i class="bi bi-database me-2"></i>Databases</h5>
+                    <p class="card-text">Microsoft Access</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-primary"><i class="bi bi-tools me-2"></i>Tools</h5>
+                    <p class="card-text">Visual Studio, Git/GitHub, Cisco Packet Tracer, Blender</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TABLE OF CONTENTS ============ -->
+<section id="contents" class="py-5 my-4 border-bottom">
+    <h2 class="mb-4 fw-bold">Table of Contents</h2>
+    <p class="text-muted">@Model.Count projects, grouped by type. Click a title to open its detail page.</p>
+
+    <div class="row g-4 mt-1">
+        @foreach (var category in categories)
+        {
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0 toc-card">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary">
+                            <i class="bi bi-folder2-open me-2"></i>@category
+                        </h5>
+                        <ol class="toc-list mb-0">
+                            @foreach (var project in Model.Where(p => p.Category == category))
+                            {
+                                <li>
+                                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id">
+                                        @project.Title
+                                    </a>
+                                </li>
+                            }
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="py-5 my-4 border-bottom">
+    <h2 class="mb-4 fw-bold">Projects</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var project in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id" class="thumb-link">
+                        <img src="@project.Thumbnail"
+                             class="card-img-top project-thumb"
+                             alt="Screenshot of @project.Title"
+                             onerror="this.onerror=null; this.src='/images/briefing.png'; this.classList.add('thumb-placeholder');">
+                    </a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">@project.Title</h5>
+                        <p class="card-text flex-grow-1">@project.ShortDescription</p>
+                        <div class="mb-3">
+                            @foreach (var tag in project.Tags)
+                            {
+                                <span class="badge bg-secondary">@tag</span>
+                            }
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id"
+                               class="btn btn-primary btn-sm">View Details</a>
+                            <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer"
+                               class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<section id="contact" class="py-5 my-4">
+    <h2 class="mb-4 fw-bold">Contact Information</h2>
+    <div class="row">
+        <div class="col-md-7">
+            <ul class="list-unstyled fs-5">
+                <li class="mb-3">
+                    <i class="bi bi-envelope-fill text-primary me-2"></i>
+                    <strong>Email:</strong> anesmariane@gmail.com
+                </li>
+                <li class="mb-3">
+                    <i class="bi bi-phone-fill text-primary me-2"></i>
+                    <strong>Mobile:</strong> +63 963 842 1009
+                </li>
+                <li class="mb-3">
+                    <i class="bi bi-github text-primary me-2"></i>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/Mariane-02" target="_blank" class="text-decoration-none">github.com/Mariane-02</a>
+                </li>
+                <li class="mb-3">
+                    <i class="bi bi-facebook text-primary me-2"></i>
+                    <strong>Facebook:</strong>
+                    <a href="https://www.facebook.com/mariane.anes.24/" target="_blank" class="text-decoration-none">facebook.com/mariane.anes.24</a>
+                </li>
+            </ul>
+            <div class="mt-4">
+                <a href="~/Anes, Mariane Valerie _ Resume.pdf" download="Anes_Resume.pdf" class="btn btn-success btn-lg">
+                    <i class="bi bi-download me-2"></i>Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
