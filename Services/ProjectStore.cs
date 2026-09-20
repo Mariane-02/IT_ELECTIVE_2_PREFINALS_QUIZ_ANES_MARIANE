@@ -33,7 +33,7 @@ public class ProjectStore
                     "Menu-driven console interface"
                 },
                 Tags = new[] { "C#" },
-                GitHubUrl = "https://github.com/Mariane-02/BSIT31E1_PRELIM_H1-ANES_MARIANE",
+                GitHubUrl = "https://github.com/Mariane-02/BSIT31E1_PRELIM_H1-ANES_MARIANE.git",
                 Thumbnail = "/images/student-management.png"
             },
             new Project
@@ -56,7 +56,7 @@ public class ProjectStore
                     "Data schema validation"
                 },
                 Tags = new[] { "C#", "Design Patterns" },
-                GitHubUrl = "https://github.com/Mariane-02/-BSIT31E1_PRELIM_H2_Anes_Mariane-Valerie",
+                GitHubUrl = "https://github.com/Mariane-02/-BSIT31E1_PRELIM_H2_Anes_Mariane-Valerie.git",
                 Thumbnail = "/images/file-ingestion.png"
             },
             new Project
@@ -78,7 +78,7 @@ public class ProjectStore
                     "Clean, readable control flow"
                 },
                 Tags = new[] { "C#" },
-                GitHubUrl = "https://github.com/Mariane-02/BSIT31E1_PRELIM_A1_ANES_MARIANE",
+                GitHubUrl = "https://github.com/Mariane-02/BSIT31E1_PRELIM_A1_ANES_MARIANE.git",
                 Thumbnail = "/images/fizzbuzz.png"
             },
             new Project
@@ -101,7 +101,7 @@ public class ProjectStore
                     "Four basic arithmetic operations"
                 },
                 Tags = new[] { "C#" },
-                GitHubUrl = "https://github.com/Mariane-02/BSIT31E1_PRELIM_A2_ANES_MARIANE",
+                GitHubUrl = "https://github.com/Mariane-02/BSIT31E1_PRELIM_A2_ANES_MARIANE.git",
                 Thumbnail = "/images/calculator.png"
             },
             new Project
@@ -124,7 +124,7 @@ public class ProjectStore
                     "JSON controller endpoints"
                 },
                 Tags = new[] { "C#", "ASP.NET Core", "JSON" },
-                GitHubUrl = "https://github.com/Mariane-02/IT_ELECTIVE_2_PRELIM_EXAM_ANES_MARIANEVALERIE",
+                GitHubUrl = "https://github.com/Mariane-02/IT_ELECTIVE_2_PRELIM_EXAM_ANES_MARIANEVALERIE.git",
                 Thumbnail = "/images/http-client.png"
             },
             new Project
@@ -147,7 +147,7 @@ public class ProjectStore
                     "Runtime polymorphic behaviour"
                 },
                 Tags = new[] { "C#", "OOP" },
-                GitHubUrl = "https://github.com/Mariane-02/Mariane-02-BSIT_31E1_PRELIM_Q1_Anes_Mariane-Valerie",
+                GitHubUrl = "https://github.com/Mariane-02/Mariane-02-BSIT_31E1_PRELIM_Q1_Anes_Mariane-Valerie.git",
                 Thumbnail = "/images/transport.png"
             }
         };
